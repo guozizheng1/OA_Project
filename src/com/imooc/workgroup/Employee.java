@@ -7,6 +7,7 @@ public class Employee {
 	private int empAge;//年龄
 	private String empSex;//性别
 	private Department empDepartment;//员工所属部门
+	private Department empDepName; //员工部门
 	private Position empPosition;//员工职务
 	
 	//无参的构造方法
@@ -15,11 +16,12 @@ public class Employee {
 	}
 	
 	//带参的构造方法
-	public Employee(String empName, String empNo, int empAge, String empSex, Position empPosition) {
+	public Employee(String empName, String empNo, int empAge, String empSex, Department empDepName, Position empPosition) {
 		this.setEmpName(empName);
 		this.setEmpNo(empNo);
 		this.setEmpAge(empAge);
 		this.setEmpSex(empSex);
+		this.setEmpDepName(empDepName);
 		this.setEmpPosition(empPosition);
 		
 	}
@@ -103,10 +105,24 @@ public class Employee {
 		this.empPosition = empPosition;
 	}
 	
-	
+	/**
+	 * 获取员工部门名称对象，如果没有实例化，先实例化再返回
+	 * @return
+	 */
+	public Department getEmpDepName() {
+		if(this.empDepName==null) {
+			this.empDepName = new Department();
+		}
+		return empDepName;
+	}
+
+	public void setEmpDepName(Department empDepName) {
+		this.empDepName = empDepName;
+	}
+
 	public String empInfo() {
-		String str = "员工信息如下:\n姓名: " + this.getEmpName() + "\n工号: " + this.getEmpNo() + "\n性别: " + this.getEmpSex()
-				+ "\n年龄: " + this.getEmpAge() + "\n职务: " + this.getEmpPosition().getPosName();
+		String str = "姓名: " + this.getEmpName() + "\n工号: " + this.getEmpNo() + "\n性别: " + this.getEmpSex()
+				+ "\n年龄: " + this.getEmpAge() + "\n职务: " + this.getEmpDepName().getDepName() + this.getEmpPosition().getPosName();
 		return str;
 	}
 	
