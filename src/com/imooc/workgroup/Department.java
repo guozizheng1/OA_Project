@@ -74,7 +74,7 @@ public class Department {
 	public void addEmployee(Employee emp) {
 		for(int i=0;i<getDepEmployees().length;i++) {
 			if(getDepEmployees()[i]==null) {
-				emp.setEmpDepartment(this);
+				emp.setEmpDepName(this);
 				this.getDepEmployees()[i] = emp;
 				//将员工数量保存到employeeNum中
 				this.employeeNum = i + 1;

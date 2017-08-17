@@ -6,7 +6,7 @@ public class Employee {
 	private String empNo;//工号
 	private int empAge;//年龄
 	private String empSex;//性别
-	private Department empDepartment;//员工所属部门
+	//private Department empDepartment;//员工所属部门
 	private Department empDepName; //员工部门
 	private Position empPosition;//员工职务
 	
@@ -75,20 +75,20 @@ public class Employee {
 		}
 	}
 	
-	/**
-	 * 获取部门对象，如果没有实例化，先实例化再返回
-	 * @return 部门对象的信息
-	 */
-	public Department getEmpDepartment() {
-		if(this.empDepartment==null) {
-			this.empDepartment = new Department();
-		}
-		return empDepartment;
-	}
-
-	public void setEmpDepartment(Department empDepartment) {
-		this.empDepartment = empDepartment;
-	}
+//	/**
+//	 * 获取部门对象，如果没有实例化，先实例化再返回
+//	 * @return 部门对象的信息
+//	 */
+//	public Department getEmpDepartment() {
+//		if(this.empDepartment==null) {
+//			this.empDepartment = new Department();
+//		}
+//		return empDepartment;
+//	}
+//
+//	public void setEmpDepartment(Department empDepartment) {
+//		this.empDepartment = empDepartment;
+//	}
 
 	/**
 	 * 获取职务对象，如果没有实例化，先实例化再返回
